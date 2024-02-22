@@ -10,7 +10,7 @@ class UserClass extends React.Component {
         location: "Zummy",
       },
     };
-    //console.log(this.props.name + "child constructor");
+    console.log(this.props.names + "child constructor");
   }
 
   //Api call
@@ -25,10 +25,18 @@ class UserClass extends React.Component {
     this.setState({
       userInfo: json,
     });
+
+    console.log("child Component mount");
+  }
+  componentDidUpdate() {
+    console.log("child component did update");
+  }
+  componentWillUnmount() {
+    console.log("child component wi;; unmount");
   }
 
   render() {
-    //console.log(this.props.name + "child Render");
+    console.log(this.props.names + "child Render");
     const { names, locations } = this.props;
     const { count, count2 } = this.state;
     const { name, location, avatar_url } = this.state.userInfo;
@@ -37,8 +45,8 @@ class UserClass extends React.Component {
         <h4>
           Api Call Data
           <img src={avatar_url} alt="" height={150} width={150} />
-          <h1>{name}</h1>
-          <h1>{location}</h1>
+          <p>{name}</p>
+          <p>{location}</p>
         </h4>
         <h1>Counter:{count}</h1>
         <button
