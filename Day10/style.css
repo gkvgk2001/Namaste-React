@@ -1,0 +1,245 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+
+
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+}
+
+.nav-items ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+
+}
+
+
+
+
+.nav-items li {
+
+    padding: 10px;
+    margin: 0.50rem;
+
+}
+
+.nav-items li:last-child {
+    padding-right: 4rem;
+}
+
+.Restaurant-card {
+
+    width: 200px;
+    height: auto;
+
+    margin-top: 1rem;
+    padding: 0.3rem;
+    padding-bottom: 0.7rem;
+    transition: 1sec ease-in-out;
+    cursor: pointer;
+    background-color: rgb(196, 190, 190);
+}
+
+.Restaurant-card:hover {
+    border: 1px solid black;
+    transform: scale(1.1);
+}
+
+
+.Search input {
+    padding: 0.7rem 6rem;
+}
+
+.Search {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 2rem;
+}
+
+.res-logo {
+    width: 100%;
+
+    height: 50%;
+}
+
+.Restaurant-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+
+
+    width: 100%;
+    gap: 1rem;
+
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+
+}
+
+.body {
+    margin: 2rem;
+}
+
+
+.btnsandsearch {
+    display: flex;
+    align-items: baseline;
+
+    gap: 3rem;
+}
+
+.filter {
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    background-color: rgb(85, 81, 81);
+    color: white;
+    font-size: 1.2rem;
+    border: 1pxsolid black;
+    border-radius: 10px;
+    transition: ease-in-out;
+}
+
+.filter-btn :hover {
+    transform: scale(0.95);
+    background-color: rgb(255, 80, 80);
+}
+
+.Shimmer-Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shimmer-card {
+    margin: 20px;
+    height: 390px;
+    width: 200px;
+    background-color: lightgray;
+}
+
+/* button */
+
+button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 600;
+    margin: 0 10px;
+    width: 150px;
+    padding: 10px 0;
+    box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+    transition: 0.4s;
+}
+
+
+.log {
+    color: rgb(104, 85, 224);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(104, 85, 224, 1);
+}
+
+button:hover {
+    color: white;
+
+    box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+    background-color: rgba(104, 85, 224, 1);
+}
+
+
+
+
+
+.menu {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.menuheader {
+    display: flex;
+    flex-direction: column;
+
+
+
+
+
+
+}
+
+.Maincontainer {
+    display: flex;
+    justify-content: space-around;
+    /* gap: 2rem; */
+    margin: 1rem auto;
+
+}
+
+.leftrecom {
+    width: 40%;
+
+}
+
+hr {
+    margin-left: 0%;
+}
+
+.description {
+    text-align: justify;
+
+}
+
+.BannerImages {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.bannerimg img {
+    border-radius: 1rem;
+    opacity: 0.8;
+    width: 300px;
+    height: 300px;
+    filter: drop-shadow(8px 8px 10px rgb(8, 8, 8))
+}
+
+.bannerabvinfo {
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    top: -5%;
+    left: 4%;
+    z-index: 1;
+    width: 60%;
+}
+
+.bannerabvprice {
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    top: 83%;
+    left: 7%;
+    z-index: 1;
+}
+
+.usercard {
+    max-width: auto;
+    padding: 10px;
+    border: 1px solid black;
+}
