@@ -43,53 +43,63 @@ const Bodyhead = () => {
   }
   return (
     <div className="body">
-      <div className="btnsandsearch">
-        <div className="Search">
-          <input
-            className="serachbox"
-            type="text"
-            placeholder="Search Your Resaturant"
-            value={searchText}
-            onChange={(e) => {
-              setsearchText(e.target.value);
-            }}
-          />
+      <div class=" btnsandsearch flex flex-1 items-center justify-center  px-10 gap-4">
+        <div class="w-full max-w-lg">
+          <div class="mt-5 sm:flex sm:items-center ">
+            <input
+              id="q"
+              name="q"
+              class="inline w-full rounded-md border 
+               border-gray-300 bg-white py-2 pl-3 pr-3 leading-5 placeholder-gray-500
+              focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 
+               focus:ring-indigo-500 sm:text-sm"
+              placeholder="Search your Restaurant"
+              type="text"
+              value={searchText}
+              onChange={(e) => {
+                setsearchText(e.target.value);
+              }}
+            />
+            <button
+              class="mt-3 inline-flex w-full items-center justify-center rounded-md border
+                  border-transparent bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 
+             focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 
+              sm:w-auto sm:text-sm"
+              onClick={() => {
+                {
+                  const updateRestaurant = listOfRestaurants.filter((res) =>
+                    res.info.name
+                      .toLowerCase()
+                      .includes(searchText.toLowerCase())
+                  );
 
-          <button
-            className="buttonsearch"
-            onClick={() => {
-              {
-                const updateRestaurant = listOfRestaurants.filter((res) =>
-                  res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                  setfilteredRestaurant(updateRestaurant);
+                }
+              }}
+            >
+              Search
+            </button>
+
+            <button
+              className="mt-3 inline-flex w-full items-center justify-center rounded-md border mb-4
+                  border-transparent bg-red-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 
+             focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 
+              sm:w-auto sm:text-sm"
+              // onClick={() => console.log("Button Clicked")}
+              onClick={() => {
+                const filteredList = listOfRestaurants.filter(
+                  (x) => x?.info?.avgRating > 4
                 );
-
-                // console.log(filteredRestaurant);
-
-                setfilteredRestaurant(updateRestaurant);
-              }
-            }}
-          >
-            Search
-          </button>
-        </div>
-
-        <div className="filter-btn">
-          <button
-            className="filter"
-            // onClick={() => console.log("Button Clicked")}
-            onClick={() => {
-              const filteredList = listOfRestaurants.filter(
-                (x) => x?.info?.avgRating > 4
-              );
-              setfilteredRestaurant(filteredList);
-            }}
-          >
-            Top Rated
-          </button>
+                setfilteredRestaurant(filteredList);
+              }}
+            >
+              Top Rated
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="Restaurant-Container">
+      <div className="Restaurant-Container rounded-lg flex flex-wrap justify-center">
         {filteredRestaurants.map(function (restaurants, keys) {
           return (
             <Link
