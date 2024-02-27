@@ -99,7 +99,7 @@ const Bodyhead = () => {
         </div>
       </div>
 
-      <div className="Restaurant-Container rounded-lg flex flex-wrap justify-center">
+      <div className="Restaurant-Container rounded-lg flex  justify-evenly flex-wrap sm:gap-4 sm:flex sm:flex-wrap sm:justify-center ">
         {filteredRestaurants.map(function (restaurants, keys) {
           return (
             <Link

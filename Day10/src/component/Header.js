@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <div className="relative">
-      <div className="header , flex , justify-between bg-green-300 shadow-lg  mb-2 px-2 ">
+      <div className="header , flex , justify-between bg-green-300 shadow-lg  mb-2 px-2 sm:bg-pink-300 ">
         <div className="Logo-container">
           <img className="logo w-32 " src={LOGO_URL} alt="logo" />
         </div>
