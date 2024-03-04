@@ -30,6 +30,9 @@ const Bodyhead = () => {
     setfilteredRestaurant(
       json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    console.log(
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   const onlineStatus = useOnlinestatus();
@@ -83,8 +86,8 @@ const Bodyhead = () => {
             <button
               className="mt-3 inline-flex w-full items-center justify-center rounded-md border mb-4
                   border-transparent bg-red-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 
-             focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 
-              sm:w-auto sm:text-sm"
+             focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-1 sm:ml-5 sm:w-26 sm:text-md
+              sm:pl-0 sm:pr-1  "
               // onClick={() => console.log("Button Clicked")}
               onClick={() => {
                 const filteredList = listOfRestaurants.filter(
@@ -93,13 +96,13 @@ const Bodyhead = () => {
                 setfilteredRestaurant(filteredList);
               }}
             >
-              Top Rated
+              <span>Top Rated </span>
             </button>
           </div>
         </div>
       </div>
 
-      <div className="Restaurant-Container rounded-lg flex  justify-evenly flex-wrap sm:gap-4 sm:flex sm:flex-wrap sm:justify-center ">
+      <div className="Restaurant-Container rounded-lg flex  justify-evenly flex-wrap sm:gap-8 sm:flex sm:flex-wrap sm:justify-center ">
         {filteredRestaurants.map(function (restaurants, keys) {
           return (
             <Link

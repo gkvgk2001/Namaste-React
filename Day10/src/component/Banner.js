@@ -15,14 +15,16 @@ const Banner = () => {
   if (restInfos === null) {
     return <Shimmer />;
   }
+  console.log(
+    restInfos?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+      ?.card
+  );
 
   try {
     const { carousel, title } =
-      restInfos?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+      restInfos?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
         ?.card;
 
-    console.log(carousel);
-    console.log(title);
     return (
       <div className="bannersection">
         <h2>{title}</h2>
@@ -33,6 +35,8 @@ const Banner = () => {
                 src={Banner_URL + banners?.dish?.info?.imageId}
                 alt="Restaurant-Logo"
                 height={"200px"}
+                width={"200px"}
+                className=" object-fill bg-no-repeat"
               />
             </div>
 
