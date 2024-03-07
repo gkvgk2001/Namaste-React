@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Itemlist from "./Itemlist";
 
-const RestaurantCategory = (data) => {
-  const [selected, setselected] = useState(false);
+const RestaurantCategory = ({ data, showItem, setShowIndex, dummy }) => {
+  const { itemCards, title } = data;
 
-  const { itemCards, title } = data.data;
+  const [selected, setselected] = useState(true);
 
   function handleClick() {
-    setselected(selected === true ? false : true);
+    setShowIndex();
+    setselected(!selected);
   }
 
   return (
@@ -20,10 +21,10 @@ const RestaurantCategory = (data) => {
           <span className="text-lg font-bold">
             {title} ({itemCards.length})
           </span>
-          <span className="text-2xl">{selected === true ? "-" : "+"}</span>
+          <span className="text-2xl">{"+"}</span>
         </div>
 
-        <div>{selected && <Itemlist data={itemCards} />}</div>
+        {selected && showItem && <Itemlist data={itemCards} data2={dummy} />}
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
 import Rescard from "./RestaurantCard";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import useOnlinestatus from "../utils/useOnlinestatus";
+
+import UserContext from "../utils/UserContext";
 
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -36,6 +38,8 @@ const Bodyhead = () => {
   };
 
   const onlineStatus = useOnlinestatus();
+
+  const { loggedinUser, setUsername } = useContext(UserContext);
 
   if (onlineStatus === false) {
     return <h1>Looks Like you are Offline please come back online</h1>;
@@ -98,6 +102,24 @@ const Bodyhead = () => {
             >
               <span>Top Rated </span>
             </button>
+          </div>
+
+          <div>
+            <label>UserName:</label>
+            <input
+              id="q"
+              name="q"
+              class="inline w-full rounded-md border 
+               border-gray-300 bg-white py-2 pl-3 pr-3 leading-5 placeholder-gray-500
+              focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 
+               focus:ring-indigo-500 sm:text-sm"
+              placeholder="Set you Useranme"
+              type="text"
+              value={loggedinUser}
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+            />
           </div>
         </div>
       </div>

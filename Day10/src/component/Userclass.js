@@ -1,9 +1,10 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 1,
+      count: 2,
       count2: 7,
       userInfo: {
         name: "Dummy",
@@ -26,13 +27,13 @@ class UserClass extends React.Component {
       userInfo: json,
     });
 
-    console.log("child Component mount");
+    // console.log("child Component mount");
   }
   componentDidUpdate() {
-    console.log("child component did update");
+    //  console.log("child component did update");
   }
   componentWillUnmount() {
-    console.log("child component wi;; unmount");
+    // console.log("child component wi;; unmount");
   }
 
   render() {
@@ -48,8 +49,17 @@ class UserClass extends React.Component {
           <p>{name}</p>
           <p>{location}</p>
         </h4>
+        <div>
+          Loggedin user
+          <UserContext.Consumer>
+            {({ loggedinUser }) => (
+              <h1 className="text-2xl font-bold">{loggedinUser}</h1>
+            )}
+          </UserContext.Consumer>
+        </div>
         <h1>Counter:{count}</h1>
         <button
+          className="p-2 cursor-pointer bg-slate-100"
           onClick={() => {
             this.setState({
               count: this.state.count + 1,

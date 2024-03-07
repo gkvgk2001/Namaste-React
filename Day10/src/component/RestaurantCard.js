@@ -1,5 +1,8 @@
 import { CDN_URL } from "../utils/constant";
 
+import { useContext } from "react";
+import UserContext from "../utils/UserContext.js";
+
 const Rescard = (props) => {
   const { resData } = props;
 
@@ -11,6 +14,9 @@ const Rescard = (props) => {
     deliveryTime,
     avgRating,
   } = resData?.info;
+
+  const { loggedinUser } = useContext(UserContext);
+
   return (
     <div className="Restaurant-card sm:gap-8   m-4 h-82 px-2 py-2  w-36 sm:h-auto sm:w-72 sm:px-2  rounded-lg bg-slate-200  hover:bg-green-300 ">
       <img
@@ -25,6 +31,7 @@ const Rescard = (props) => {
       <h4>{avgRating}</h4>
       <h4>{costForTwo}</h4>
       <h4>{resData?.info?.sla?.slaString}</h4>
+      <h4>{loggedinUser}</h4>
     </div>
   );
 };

@@ -1,9 +1,8 @@
 import React from "react";
 import { MENU_Image_URL } from "../utils/constant";
-const Itemlist = (items) => {
-  console.log(items);
-
-  const itemlst = items.data;
+const Itemlist = ({ data, data2 }) => {
+  const itemlst = data;
+  console.log(data2);
 
   return (
     <div>
