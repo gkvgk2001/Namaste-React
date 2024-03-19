@@ -1,0 +1,37 @@
+{
+  "name": "day11",
+  "version": "1.0.0",
+  "description": "This is Namste React Day 11",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkvgk2001/Namaste-React.git"
+  },
+  "keywords": [
+    "hhsf"
+  ],
+  "author": "Gaurav Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gkvgk2001/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/gkvgk2001/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "postcss": "^8.4.35",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@reduxjs/toolkit": "^2.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.0"
+  }
+}
