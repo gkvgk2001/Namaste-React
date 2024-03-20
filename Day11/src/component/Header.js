@@ -1,7 +1,7 @@
 import { LOGO_URL } from "../utils/constant";
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 import useOnlinestatus from "../utils/useOnlinestatus";
 import UserContext from "../utils/UserContext";
 
@@ -17,6 +17,9 @@ const Header = () => {
   const onlineStatus = useOnlinestatus();
 
   const { loggedinUser } = useContext(UserContext);
+
+  const Cartitems = useSelector((store) => store.cart.items);
+  console.log(Cartitems);
 
   return (
     <div className="relative">
@@ -42,7 +45,9 @@ const Header = () => {
             <li>
               <Link to={"/grocery"}> Grocery</Link>
             </li>
-            <li>Cart</li>
+            <li className="px-4 font-bold text-xl">
+              <Link to={"/Cart"}> Cart({Cartitems.length}items)</Link>
+            </li>
             <li>
               <button
                 class="log"

@@ -1,8 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+
 import { MENU_Image_URL } from "../utils/constant";
+import { addItem } from "../utils/Cartslice";
 const Itemlist = ({ data, data2 }) => {
   const itemlst = data;
   console.log(data2);
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  };
 
   return (
     <div>
@@ -27,7 +34,10 @@ const Itemlist = ({ data, data2 }) => {
             </div>
             <div className="rightrecom  w-3/12 relative">
               <div className="absolute top-16 left-2 sm:top-16 sm:left-8 z-10   text-green-400 ">
-                <button className="sm:px-3  px-4 py-2 bg-white shadow-lg text-sm  rounded-md ">
+                <button
+                  onClick={() => handleAddItem(item)}
+                  className="sm:px-3  px-4 py-2 bg-white shadow-lg text-sm  rounded-md "
+                >
                   Add +
                 </button>
               </div>
